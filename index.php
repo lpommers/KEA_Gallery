@@ -11,7 +11,8 @@
     	Image Description <textarea  name="description" cols=30 rows=10>
     </textarea><br />
     	Location <input type="text" name="location"><br />
-
+    	Choose your file <input type="file" name="filename"> <br/>
+		<input type="submit" value="Submit">
 
 	</form>
 </body>
