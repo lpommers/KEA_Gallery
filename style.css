@@ -30,3 +30,9 @@ form input{
 	font-size: .5em;
 	line-height: 1em;
 }
+
+img{
+	width: 40%;
+	padding: .2em;
+	margin: .2em;
+}

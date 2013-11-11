@@ -43,7 +43,7 @@
     <h1>Upload Your Image here!</h1>
 
     <label for="#form_fields"></label>
-    <form id='form_fields' action = 'practice.php' method="post" enctype = 'multipart/form-data'>
+    <form id='form_fields' action = 'index.php' method="post" enctype = 'multipart/form-data'>
         User Name: <input type="text" name="username"><br />
         Image Title: <input type="text" name="title"><br />
         Image Description:<br /> <textarea  name="description" cols=40 rows=5>
