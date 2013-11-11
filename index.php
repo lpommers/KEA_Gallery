@@ -36,15 +36,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <form action = 'practice.php' method="post" enctype = 'multipart/form-data'>
-        User Name <input type="text" name="username"><br />
-        Image Title <input type="text" name="title"><br />
-        Image Description <textarea  name="description" cols=30 rows=10>
-    </textarea><br />
-        Location <input type="text" name="location"><br />
-        Choose your file <input type="file" name="filename"> <br/>
+    <h1>Upload Your Image here!</h1>
+
+    <label for="#form_fields"></label>
+    <form id='form_fields' action = 'practice.php' method="post" enctype = 'multipart/form-data'>
+        User Name: <input type="text" name="username"><br />
+        Image Title: <input type="text" name="title"><br />
+        Image Description:<br /> <textarea  name="description" cols=40 rows=5>
+            </textarea><br />
+        Where did you take this photo? <input type="text" name="location"><br />
+        Choose your file: <input type="file" name="filename"> <br/>
         <input type="submit" value="Submit">
 
     </form>
