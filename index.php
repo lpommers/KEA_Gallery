@@ -5,12 +5,13 @@
 	<title>Gallery</title>
 </head>
 <body>
-    <form action = "index.php" method="post">
-    	User Name <input type="text" name="username">
-    	Image Title <input type="text" name="imgtitle">
-    	Image Description <textarea  name="imgdescrip" cols=30 rows=10>
-    </textarea>
-    	Location <input type="text" name="location">
+    <form action = <?php $_SERVER['PHP_SELF'] ?> method="post" enctype = 'multipart/form-data'>
+    	User Name <input type="text" name="username"><br />
+    	Image Title <input type="text" name="title"><br />
+    	Image Description <textarea  name="description" cols=30 rows=10>
+    </textarea><br />
+    	Location <input type="text" name="location"><br />
+
 
 	</form>
 </body>
