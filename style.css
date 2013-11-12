@@ -1,38 +1,20 @@
-*{
-	font-family: 'Noto Sans', sans-serif;
-	color: #2980b9;
-
-}
-
-body{
-	background-color: #ecf0f1;
-}
-h1{
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
+body {background-image:url('lila.gif');}
+nav {
 	text-align: center;
+	font-weight: bold;
 }
-
-form{
-
-	width: 50%;
-	font-size: 2em;
-	text-align: center;
-	margin-right: auto;
-	margin-left: auto;
-
-
+nav ul li {
+	display: inline-block;
+	padding: 6em 7em 9em 6em;
 }
-
-form input{
-	padding: .5em;
-	font-size: .5em;
-	line-height: 1em;
+#navigation a {
+	text-decoration: none;
+	background-color: #5B80EE;
+	border: black solid;
+	color: black;
+	padding: 0.5em;
+	border-radius: 0.5em;
 }
-
-img{
-	width: 40%;
-	padding: .2em;
-	margin: .2em;
+#navigation a:hover {
+	color: white;
 }

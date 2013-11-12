@@ -1,14 +1,14 @@
 <?php
+    //save information
+    $link=mysql_connect('localhost', 'kriz0001','kea660587#');
+    mysql_select_db('kriz0001', $link);
+
     if ($_FILES) {
 
         //moves uploaded file to permanent folder
         $filename = $_FILES['filename']['tmp_name'];
-        $destination = $_FILES['filename']['name'];
+        $destination = 'userimages/'.$_FILES['filename']['name'];
         move_uploaded_file($filename, $destination);
-
-        //save information
-        $link=mysql_connect('localhost', 'kriz0001','kea660587#');
-        mysql_select_db('kriz0001', $link);
 
         $username = $_POST['username'];
         $title = $_POST['title'];
@@ -20,13 +20,21 @@
         $result = mysql_query($sql);
         $out = '';
             if ($result) {
-        $out .= 'Data has been inserted';
-    }else{
-        $out .= 'Data was NOT inserted';
-        $out .= mysql_error();
-
+                $out .= 'Data has been inserted';
+            }else{
+                $out .= 'Data was NOT inserted';
+                $out .= mysql_error();
+            }
+        echo $out;
     }
-    echo $out;
+
+    $sql = 'SELECT imagename, title, description FROM gallery';
+
+
+    $result = mysql_query($sql);
+
+    if (!$result) {
+        die('You were not able to query the database');
     }
 
 ?>
@@ -53,5 +61,22 @@
         <input type="submit" value="Submit">
 
     </form>
+
+    <pre>
+    <?php
+        while ($row = mysql_fetch_assoc($result)) {
+
+    ?>
+
+        <img src="<?php echo $row['imagename']; ?>" alt="why isn't this working">
+    <?php
+        }
+     ?>
+    </pre>
+
+    <?php
+        // step 4release returned data
+        mysql_free_result($result);
+      ?>
 </body>
 </html>
