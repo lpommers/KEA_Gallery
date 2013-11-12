@@ -35,22 +35,25 @@
 	<nav id="navigation">
 		<ul>
 			<li><a href="index2.html"> Home</a></li>
-			<li><a href="practice2.php">Upload</a></li>
+			<li><a href="upload.php">Upload</a></li>
 		</ul>
 	</nav>
 
 	<h1>Here's our image gallery</h1>
 
 	<?php
+		//starts a while loop to go through every row in the database table
 		while ($row = mysqli_fetch_array($result)) {
 	?>
 
-
 	<a href="<?php echo $row['imagename']; ?> "><img src="<?php echo $row['imagename']; ?>" alt="woo!"></a>
+
 	<?php
+		//closes the while loop.
 		}
 	 ?>
-
+	<br />
+	<a href="homepage.php">Go back to the gallery!</a>
 	<?php
 	 	// step 4release returned data
 	 	mysqli_free_result($result);
