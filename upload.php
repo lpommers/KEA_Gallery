@@ -11,7 +11,7 @@
 	if ($_FILES) {
 
 		//checks the file size of the image
-		if ($_FILES['filename']['size'] > 200000) {
+		if ($_FILES['filename']['size'] > 2000000) {
 			echo "too big!";
 			$error_msg[] = "File is too large! Scale it down a bit there, cowboy!";
 			$validate = false;
@@ -91,6 +91,7 @@
     </textarea><br />
     	Location: <input type="text" name="location"><br />
     	Choose your file: <input type="file" name="filename"> <br/>
+    	<p>Please only use .jpg, .gif, or .png files - and don't go over 2mb or a monster will get you!!!</p>
 		<input type="submit" value="Submit">
 
 	</form>
