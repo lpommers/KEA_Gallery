@@ -16,36 +16,49 @@
 
 ?>
 
-<!doctype html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style.css">
-	<title> Image Gallery</title>
+
+	<meta charset="utf-8"/>
+
+	<title>Upload your Picture !!</title>
+	<link href="style.css" type="text/css" rel="stylesheet"/>
+	<link href='http://fonts.googleapis.com/css?family=Rambla' rel='stylesheet' type='text/css'>
+
 </head>
+
 <body>
+	<header>
+	</header>
+
+	<nav id="navigation">
+		<ul>
+			<li><a href="index2.html"> Home</a></li>
+			<li><a href="practice2.php">Upload</a></li>
+		</ul>
+	</nav>
+
 	<h1>Here's our image gallery</h1>
-	<pre>
+
 	<?php
 		while ($row = mysqli_fetch_array($result)) {
-
 	?>
 
-		<img src="<?php echo $row['imagename']; ?>" alt="why isn't this working">
+	<img src="<?php echo $row['imagename']; ?>" alt="why isn't this working">
+
 	<?php
 		}
 	 ?>
-	</pre>
 
 	<?php
 	 	// step 4release returned data
 	 	mysqli_free_result($result);
 	  ?>
-</body>
+<body/>
 </html>
-
 <?php
 	//step 5 - close the connection to mysql
-	mysqli_close($connection);
+	mysqli_close($link);
 
  ?>

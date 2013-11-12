@@ -1,4 +1,6 @@
-body {background-image:url('lila.gif');}
+body {background-image:url('lila.gif');
+	font-family: 'Rambla', sans-serif;
+}
 nav {
 	text-align: center;
 	font-weight: bold;
@@ -14,7 +16,33 @@ nav ul li {
 	color: black;
 	padding: 0.5em;
 	border-radius: 0.5em;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
 }
 #navigation a:hover {
 	color: white;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+}
+form{
+	width: 75%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+img{
+	max-width: 300px;
+	max-height: 300px;
+	min-width: 200px;
+	min-height: 200px;
+	display: inline-block;
+	padding-left: .3em;
+	padding-right: .3em;
 }
