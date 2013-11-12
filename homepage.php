@@ -45,8 +45,8 @@
 		while ($row = mysqli_fetch_array($result)) {
 	?>
 
-	<img src="<?php echo $row['imagename']; ?>" alt="why isn't this working">
 
+	<a href="<?php echo $row['imagename']; ?> "><img src="<?php echo $row['imagename']; ?>" alt="woo!"></a>
 	<?php
 		}
 	 ?>
