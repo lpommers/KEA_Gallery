@@ -21,7 +21,7 @@
 <head>
 
 	<meta charset="utf-8"/>
-
+	<meta name="viewport" content="width=device-width" />
 	<title>Upload your Picture !!</title>
 	<link href="style.css" type="text/css" rel="stylesheet"/>
 	<link href='http://fonts.googleapis.com/css?family=Rambla' rel='stylesheet' type='text/css'>
