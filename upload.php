@@ -61,13 +61,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width" />
 	<title>Gallery</title>
 	<link rel="stylesheet" href="style.css">
 	<link href='http://fonts.googleapis.com/css?family=Rambla' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
+	<nav id="navigation">
+		<ul>
+			<li><a href="homepage.php">Gallery</a></li>
+		</ul>
+	</nav>
 	<?php
 	// should print out all the error messages if there are any
 	if ($validate==false) {

@@ -34,12 +34,11 @@
 
 	<nav id="navigation">
 		<ul>
-			<li><a href="index2.html"> Home</a></li>
 			<li><a href="upload.php">Upload</a></li>
 		</ul>
 	</nav>
 
-	<h1>Here's our image gallery</h1>
+	<h1>Check out this baller image gallery:</h1>
 	<div id='photos'>
 	<?php
 		//starts a while loop to go through every row in the database table
@@ -49,16 +48,12 @@
 
 	<a href="<?php echo $row['imagename']; ?> "><img src="<?php echo $row['imagename']; ?>" alt="woo!"></a>
 
-
-
-
 	<?php
 		//closes the while loop.
 		}
 	 ?>
 	</div>
 	<br />
-	<a href="homepage.php">Go back to the gallery!</a>
 	<?php
 	 	// step 4release returned data
 	 	mysqli_free_result($result);
