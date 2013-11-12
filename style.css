@@ -1,5 +1,10 @@
 body {background-image:url('lila.gif');
 	font-family: 'Rambla', sans-serif;
+	margin-right: 2em;
+	margin-left: 2em;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;
 }
 nav {
 	text-align: center;
@@ -30,6 +35,12 @@ nav ul li {
 	-ms-transition: .5s;
 	transition: .5s;
 }
+h1{
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
 form{
 	width: 75%;
 	margin-right: auto;
@@ -37,12 +48,62 @@ form{
 	text-align: center;
 }
 
-img{
-	max-width: 300px;
-	max-height: 300px;
-	min-width: 200px;
-	min-height: 200px;
+a > img:hover{
+	-webkit-transform:scale(1.2,1.2);
+	-moz-transform:scale(1.2,1.2);
+	-o-transform:scale(1.2,1.2);
+	-ms-transform:scale(1.2,1.2);
+	transform:scale(1.2,1.2);
+	/* Safari and Chrome */
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-o-transition: .3s;
+	-ms-transition: .3s;
+	transition: .3s;
+
+}
+
+@media (max-width: 3000px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+#photos  a>img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+.gallery_caption{
 	display: inline-block;
-	padding-left: .3em;
-	padding-right: .3em;
 }

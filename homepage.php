@@ -40,18 +40,23 @@
 	</nav>
 
 	<h1>Here's our image gallery</h1>
-
+	<div id='photos'>
 	<?php
 		//starts a while loop to go through every row in the database table
 		while ($row = mysqli_fetch_array($result)) {
 	?>
 
+
 	<a href="<?php echo $row['imagename']; ?> "><img src="<?php echo $row['imagename']; ?>" alt="woo!"></a>
+
+
+
 
 	<?php
 		//closes the while loop.
 		}
 	 ?>
+	</div>
 	<br />
 	<a href="homepage.php">Go back to the gallery!</a>
 	<?php

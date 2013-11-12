@@ -70,8 +70,11 @@
 	<?php
 	// should print out all the error messages if there are any
 	if ($validate==false) {
+
 		foreach ($error_msg as $value) {
 			echo $value;
+			// echo "<script>window.alert('$value'); </script>";
+			//eventually - i would like to have the error be a pop-up maybe
 		}
 	}
 	 ?>
@@ -84,7 +87,7 @@
 	 </pre>
 
 	<!-- the actual form -->
-    <form action = 'practice2.php' method="post" enctype = 'multipart/form-data'>
+    <form action = 'upload.php' method="post" enctype = 'multipart/form-data'>
     	User Name: <input type="text" name="username"><br />
     	Image Title: <input type="text" name="title"><br />
     	Image Description:<br /> <textarea  name="description" cols=30 rows=10>
