@@ -1,7 +1,7 @@
 <?php
 	//connect to the database
-	$link=mysql_connect('localhost', 'kriz0001','kea660587#');
-	mysql_select_db('kriz0001', $link);
+	$link=mysqli_connect('localhost', 'kriz0001','kea660587#', 'kriz0001')  or die("Error " . mysqli_error($link));
+
 
 	//set some defaults
 	$validate = true;
@@ -38,16 +38,18 @@
 			move_uploaded_file($filename, $destination);
 
 
-			//adds the file information to the database
-			$username = $_POST['username'];
-			$title = $_POST['title'];
-			$description = $_POST['description'];
-			$location = $_POST['location'];
+			//escapes special characters - prevents sql injection issues
+			$username = mysqli_real_escape_string($link, $_POST['username']);
+			$title = mysqli_real_escape_string($link, $_POST['title']);
+			$description = mysqli_real_escape_string($link, $_POST['description']);
+			$location = mysqli_real_escape_string($link,$_POST['location'] );
 
+
+			//gets ready to insert information into the database
 			$sql = "INSERT INTO gallery (id, username, imagename, title, description, date, location) VALUES ('', '$username', '$destination', '$title', '$description', NOW(), '$location')";
 
-			//just a test to see if you were able to query the database
-			$result = mysql_query($sql);
+			//puts the data into the database
+			$result = mysqli_query($link, $sql);
 			$out = '';
 
 			echo $out;
@@ -71,18 +73,19 @@
 			<li><a href="homepage.php">Gallery</a></li>
 		</ul>
 	</nav>
-	<?php
-	// should print out all the error messages if there are any
-	if ($validate==false) {
 
-		foreach ($error_msg as $value) {
-			echo $value;
-			// echo "<script>window.alert('$value'); </script>";
-			//eventually - i would like to have the error be a pop-up maybe
+	<h2>	<?php
+		// should print out all the error messages if there are any
+		if ($validate==false) {
+
+			foreach ($error_msg as $value) {
+				echo $value;
+				// echo "<script>window.alert('$value'); </script>";
+				//eventually - i would like to have the error be a pop-up maybe
+			}
 		}
-	}
-	 ?>
-
+		 ?>
+</h2>
 	<!-- prints out the file information -->
 	 <pre>
 	 	<?php
@@ -105,4 +108,4 @@
 	</form>
 
 </body>
-</html></html>
+</html>

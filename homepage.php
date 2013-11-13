@@ -47,7 +47,6 @@
 
 
 	<a href="<?php echo $row['imagename']; ?> "><img src="<?php echo $row['imagename']; ?>" alt="woo!"></a>
-
 	<?php
 		//closes the while loop.
 		}
