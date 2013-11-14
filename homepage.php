@@ -37,8 +37,8 @@
 			<li><a href="upload.php">Upload</a></li>
 		</ul>
 	</nav>
-
 	<h1>Check out this baller image gallery:</h1>
+	<h2>Click on image to see the full size.</h2>
 	<div id='photos'>
 	<?php
 		//starts a while loop to go through every row in the database table
@@ -46,7 +46,7 @@
 	?>
 
 
-	<a href="<?php echo $row['imagename']; ?> "><img src="<?php echo $row['imagename']; ?>" alt="woo!"></a>
+	<a href="userimages/fullimages/<?php echo $row['imagename']; ?> "><img src="userimages/thumbimages/<?php echo $row['imagename']; ?>" alt="woo!"></a>
 	<?php
 		//closes the while loop.
 		}
