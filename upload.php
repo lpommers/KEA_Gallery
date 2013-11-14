@@ -1,9 +1,11 @@
  <?php
 	//connect to the database
 	$link=mysqli_connect('localhost', 'kriz0001','kea660587#', 'kriz0001')  or die("Error " . mysqli_error($link));
+
+	//this is a function that will take the image that is uploaded and make a smaller - thumbnail size version
 	function makeThumb($src, $dest){
 
-		//this grabs the original file that we want to make another from - the switch just makes sure we have the right file type
+		//this grabs the original file that we want to make a smaller version of - the switch here just makes sure we have the right file type
 		switch ($_FILES['image']['type']) {
 			case 'image/jpeg':
 				$sourceimg = imagecreatefromjpeg($src);
@@ -23,17 +25,17 @@
 		$width = imagesx($sourceimg);
 		$height = imagesy($sourceimg);
 
-		//determines the width and hieght of the new thumbnail
+		//determines the width and hieght of our new thumbnail
 		$newHeight = ($height / 2);
 		$newWidth = ($width / 2);
 
 		//creates a temporary new image with our new dimensions
 		$tempImg =imagecreatetruecolor($newWidth, $newHeight);
 
-		//this copies the photo itself
+		//this copies the photo itself - what it actally looks like
 		imagecopyresampled($tempImg, $sourceimg, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
 
-		//we put the new thumbnail into the same filetype as the original image. We move the thumbnail to its own folder
+		//we put the new thumbnail into the same filetype as the original image. We also move the thumbnail to its own folder
 		switch ($_FILES['image']['type']) {
 			case 'image/jpeg':
 				imagejpeg($tempImg, $dest);
@@ -50,22 +52,25 @@
 		}
 	}
 
-	//set some defaults
+	//set some defaults for the validation and error messages
 	$validate = true;
 	$error_msg = '';
 
-//only does everything if we have been given a file to upload by the user
+	//checks to see if we have been given a file by the user
 	if ($_FILES) {
-		$full_destination = "userimages/fullimages/" . $_FILES['image']['name'];
+
+
 		print_r($_FILES);
 		echo $full_destination;
 		echo "before size check...validate: ".$validate."<br>";
-		//checks the file size of the image
+
+		//checks the file size of the image - sets validate to false if it is too large
 		if($_FILES['image']['size']>2000000){
 		$validate = false;
 		$error_msg[] .= "The file is too big - haha!";
 		}
 
+		//checks the type of the image - sets to false if the wrong type
 		switch ($_FILES['image']['type']) {
 			case 'image/jpeg':
 			case 'image/gif':
@@ -79,7 +84,8 @@
 		}
 		echo "after type check...validate: ".$validate."<br>";
 
-		if (file_exists($full_destination)) {
+		//checks if the file is already on the server - if it is - validate is set to false
+		if (file_exists("userimages/fullimages/" . $_FILES['image']['name'])) {
 			$validate = false;
 			$error_msg[] .= " this file already exists on the server";
 		}
@@ -89,19 +95,20 @@
 
 			echo "getting ready to upload...<br>";
 
+			//temp name
 			$filename = $_FILES['image']['tmp_name'];
-
+			//sets a url for our full size images
 			$full_destination = "userimages/fullimages/" . $_FILES['image']['name'];
+			//sets a url for our thumbnail images
 			$thumbs_destination = "userimages/thumbimages/" . $_FILES['image']['name'];
+			//the permanent name of the img
 			$imagename = $_FILES['image']['name'];
 
 			//moves files to the full images subfolder
 			move_uploaded_file($filename, $full_destination);
 
-
-			//escapes special characters - prevents sql injection issues
 			echo "getting ready to stuff in database...<br>";
-
+			//escapes special characters - prevents sql injection issues
 			$username = mysqli_real_escape_string($link, $_POST['username']);
 			$title = mysqli_real_escape_string($link, $_POST['title']);
 			$description = mysqli_real_escape_string($link, $_POST['description']);
@@ -111,12 +118,13 @@
 			//gets ready to insert information into the database
 			$sql = "INSERT INTO gallery (id, username, imagename, title, description, date, location) VALUES ('', '$username', '$imagename', '$title', '$description', NOW(), '$location')";
 			echo $sql;
-			//puts the data into the database
+			//actually puts the informationg into the database
 			$result = mysqli_query($link, $sql);
 			$out = '';
 
 			echo $out;
 
+			//calls the method which will make our thumbnail and put it in the right folder on our server
 			makeThumb($full_destination, $thumbs_destination);
 		}
 	}

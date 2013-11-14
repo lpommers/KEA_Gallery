@@ -46,8 +46,10 @@
 		while ($row = mysqli_fetch_array($result)) {
 	?>
 
+		<!-- this links to our full image html page. It sends the imagename to the full image page so it can display the proper image -->
+	<a href="fullimage.php?imagename=<?php echo $row['imagename']; ?> "><img src="userimages/thumbimages/<?php echo $row['imagename']; ?>" alt="woo!"></a>
 
-	<a href="fullimage.php?fullimage=userimages/fullimages/<?php echo $row['imagename'];?>&imagename=<?php echo $row['imagename']; ?> "><img src="userimages/thumbimages/<?php echo $row['imagename']; ?>" alt="woo!"></a>
+
 	<?php
 		//closes the while loop.
 		}
