@@ -7,7 +7,7 @@ body {
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box;
-	color:#c0392b;
+	color:#050505;
 }
 #logo {width: 35%;}
 nav {
@@ -78,7 +78,7 @@ form input{
 	background-color: #2da8a5;
 	font-weight: 700;
 	text-transform: uppercase;
-	border: 2px outset #c0392b;
+	border: black solid;
 	font-size: 125%;
 	-webkit-transition: .5s;
 	-moz-transition: .5s;
