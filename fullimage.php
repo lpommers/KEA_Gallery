@@ -7,7 +7,6 @@
 
 	$variable = $_GET['imagename'];
 
-	echo $variable;
 
 	$query = 'SELECT * ';
 	$query .= 'FROM gallery';

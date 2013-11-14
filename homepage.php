@@ -47,7 +47,7 @@
 	?>
 
 
-	<a href="fullimage.php?fullimage=userimages/fullimages/<?php echo $row['imagename'];?>&imagename<?php echo $row['imagename']; ?> "><img src="userimages/thumbimages/<?php echo $row['imagename']; ?>" alt="woo!"></a>
+	<a href="fullimage.php?fullimage=userimages/fullimages/<?php echo $row['imagename'];?>&imagename=<?php echo $row['imagename']; ?> "><img src="userimages/thumbimages/<?php echo $row['imagename']; ?>" alt="woo!"></a>
 	<?php
 		//closes the while loop.
 		}
