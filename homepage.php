@@ -30,7 +30,8 @@
 
 <body>
 	<header>
-	<img src="photogallery.png">
+	<img src="photogallery.png" id="logo">
+
 	</header>
 
 	<nav id="navigation">
