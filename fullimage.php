@@ -49,7 +49,8 @@
 
 		<p class = 'full_text'> <?php echo $row['title']; ?> </p>
 		<img id='image_full' src="<?php echo $_GET['fullimage']; ?>" alt="">
-		<p class = 'full_text'> <?php echo $row['description']; ?> </p>
+		<p class = 'full_text'>Description:  <?php echo $row['description']; ?> </p>
+		<p class = 'full_text'>Location: <?php echo $row['location']; ?> </p>
 
 
 	</div>

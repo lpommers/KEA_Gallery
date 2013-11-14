@@ -1,7 +1,6 @@
-body {background-image:url('greenblue.gif');}
 
 body {
-	
+	background-image:url('greenblue.gif');
 	font-family: 'Rambla', sans-serif;
 	margin-right: 2em;
 	margin-left: 2em;
@@ -140,6 +139,15 @@ a > img:hover{
   height: auto !important;
   overflow: visible;
 }
+
+.full_text{
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 2.5em;
+}
+
 .gallery_caption{
 	display: inline-block;
 }
