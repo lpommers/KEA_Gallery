@@ -133,7 +133,10 @@
  </head>
 
 <body>
-  	<nav id="navigation">
+	<header>
+		<img id ='logo' src="green.png" alt="">
+	</header>
+  <nav id="navigation">
  		<ul>
 			<li><a href="homepage.php">Gallery</a></li>
 		</ul>
