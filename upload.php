@@ -164,8 +164,8 @@
    			 </textarea><br />
     		Location: <input type="text" name="location"><br />
     		Choose your file: <input type="file" name="image" id="file_choose"> <br/>
-    		<p>// Please only use .jpg, .gif, or .png files. </p>
-    		<p>// Don't go over 2MB per image or a monster will get you!!!</p>
+    		<p class="red"> // Please only use .jpg, .gif, or .png files. </p>
+    		<p class="red"> // Don't go over 2MB per image or a monster will get you!!!</p>
 			<input type="submit" value="Submit" id='submit'>
 
 	</form>
