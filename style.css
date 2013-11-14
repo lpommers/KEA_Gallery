@@ -1,6 +1,6 @@
 
 body {
-	background-image:url('greenblue.gif');
+	background-image:url('green.gif');
 	font-family: 'Rambla', sans-serif;
 	margin-right: 2em;
 	margin-left: 2em;
@@ -26,7 +26,7 @@ nav ul li {
 #navigation a {
 	font-size: 3em;
 	text-decoration: none;
-	background-color: #c0392b;
+	background-color: #2da8a5;
 	border: black solid;
 	color:  black;
 	padding: 0.5em;
@@ -75,7 +75,7 @@ form input{
 }
 
 #submit{
-	background-color: #c0392b;
+	background-color: #2da8a5;
 	font-weight: 700;
 	text-transform: uppercase;
 	border: 2px outset #c0392b;
