@@ -30,8 +30,6 @@
 
 <body>
 	<header>
-	<img src="photogallery.png" id="logo">
-
 	</header>
 
 	<nav id="navigation">
@@ -48,7 +46,7 @@
 	?>
 
 
-	<a href="userimages/fullimages/<?php echo $row['imagename']; ?> "><img src="userimages/thumbimages/<?php echo $row['imagename']; ?>" alt="woo!"></a>
+	<a href="fullimage.php?imagename=userimages/fullimages/<?php echo $row['imagename']; ?> "><img src="userimages/thumbimages/<?php echo $row['imagename']; ?>" alt="woo!"></a>
 	<?php
 		//closes the while loop.
 		}
