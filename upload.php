@@ -81,7 +81,7 @@
 
 		if (file_exists($full_destination)) {
 			$validate = false;
-			$error_msg[] .= "this file already exists on the server";
+			$error_msg[] .= " this file already exists on the server";
 		}
 
 		//if those two conditions are met, the file is uploaded to both the server and database
