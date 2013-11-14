@@ -56,7 +56,9 @@
 
 //only does everything if we have been given a file to upload by the user
 	if ($_FILES) {
+		$full_destination = "userimages/fullimages/" . $_FILES['image']['name'];
 		print_r($_FILES);
+		echo $full_destination;
 		echo "before size check...validate: ".$validate."<br>";
 		//checks the file size of the image
 		if($_FILES['image']['size']>2000000){
@@ -76,6 +78,11 @@
 				break;
 		}
 		echo "after type check...validate: ".$validate."<br>";
+
+		if (file_exists($full_destination)) {
+			$validate = false;
+			$error_msg[] .= "this filea already exists on the server";
+		}
 
 		//if those two conditions are met, the file is uploaded to both the server and database
 		if($validate){
@@ -140,8 +147,7 @@
 
 			foreach ($error_msg as $value) {
 				echo $value;
-				// echo "<script>window.alert('$value'); </script>";
-				//eventually - i would like to have the error be a pop-up maybe
+
 			}
 		}
 		 ?>

@@ -34,10 +34,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<?php print_r($result); ?>
-
-	<?php print_r(mysqli_fetch_array($result)); ?>
-
 	<nav id="navigation">
 		<ul>
 			<li><a href="homepage.php">Gallery</a></li>
