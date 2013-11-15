@@ -26,7 +26,11 @@
 		//checks the type of the image - sets to false if the wrong type
 		switch ($_FILES['image']['type']) {
 			case 'image/jpeg':
+				$validate = true;
+				break;
 			case 'image/gif':
+				$validate = true;
+				break;
 			case 'image/png':
 				$validate = true;
 				break;
@@ -44,7 +48,7 @@
 		}
 
 		//if those two conditions are met, the file is uploaded to both the server and database
-		if($validate){
+		if($validate == true){
 
 			echo "getting ready to upload...<br>";
 
@@ -103,7 +107,7 @@
 		</ul>
  	</nav>
 
- 	<h3>
+ 	<h3 id = 'errors'>
 
  		<?php
 		// should print out all the error messages if there are any
