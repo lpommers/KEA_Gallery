@@ -104,6 +104,7 @@
  	</nav>
 
  	<h3>
+ 		<p class="red" id ='errors'>
 
  		<?php
 		// should print out all the error messages if there are any
