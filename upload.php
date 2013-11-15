@@ -2,55 +2,8 @@
 	//connect to the database
 	$link=mysqli_connect('localhost', 'kriz0001','kea660587#', 'kriz0001')  or die("Error " . mysqli_error($link));
 
-	//this is a function that will take the image that is uploaded and make a smaller - thumbnail size version
-	function makeThumb($src, $dest){
+	require_once("functions.php");
 
-		//this grabs the original file that we want to make a smaller version of - the switch here just makes sure we have the right file type
-		switch ($_FILES['image']['type']) {
-			case 'image/jpeg':
-				$sourceimg = imagecreatefromjpeg($src);
-				break;
-			case 'image/gif':
-				$sourceimg = imagecreatefromgif($src);
-				break;
-			case 'image/png':
-				$sourceimg = imagecreatefrompng($src);
-				break;
-			default:
-				echo "we've got some problems here";
-				break;
-		}
-
-		//determines the width and height of the source image
-		$width = imagesx($sourceimg);
-		$height = imagesy($sourceimg);
-
-		//determines the width and hieght of our new thumbnail
-		$newHeight = ($height / 2);
-		$newWidth = ($width / 2);
-
-		//creates a temporary new image with our new dimensions
-		$tempImg =imagecreatetruecolor($newWidth, $newHeight);
-
-		//this copies the photo itself - what it actally looks like
-		imagecopyresampled($tempImg, $sourceimg, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
-
-		//we put the new thumbnail into the same filetype as the original image. We also move the thumbnail to its own folder
-		switch ($_FILES['image']['type']) {
-			case 'image/jpeg':
-				imagejpeg($tempImg, $dest);
-				break;
-			case 'image/gif':
-				imagegif($tempImg, $dest);
-				break;
-			case 'image/png':
-				imagepng($tempImg, $dest);
-				break;
-			default:
-				echo "we've got some more problems here";
-				break;
-		}
-	}
 
 	//set some defaults for the validation and error messages
 	$validate = true;
@@ -125,7 +78,7 @@
 			echo $out;
 
 			//calls the method which will make our thumbnail and put it in the right folder on our server
-			makeThumb($full_destination, $thumbs_destination);
+			make_thumb($full_destination, $thumbs_destination);
 		}
 	}
 
