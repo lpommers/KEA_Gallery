@@ -5,7 +5,7 @@
 		die("you didn't connect");
 	}
 
-	$query = 'SELECT * ';
+	$query = 'SELECT ';
 	$query .= 'FROM gallery';
 
 	$result = mysqli_query($link, $query);
