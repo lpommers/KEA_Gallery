@@ -1,5 +1,5 @@
 <?php
-	//connect to the database
+	//here we connect to our database -- we do this on every page
 	$link = mysqli_connect('localhost', 'kriz0001', 'kea660587#', 'kriz0001');
 
 	//if we don't connect - an error is returned
@@ -7,18 +7,18 @@
 		die("you didn't connect");
 	}
 
-	//make a variabale with our photo name
+	//here we go up to the url and get the information that comes up directly after the "imagename=" in the url. we set it to a variable called imagename
 	$imagename = $_GET['imagename'];
 
-	//create a variable that holds the sql data
+	//here we get ready to talk to our database. We say we want to collect all the column information (id, title, description, ect.) for one specific row - and that row is the one that we have been given in the url
 	$query = 'SELECT * ';
 	$query .= 'FROM gallery';
 	$query .= " WHERE imagename='$imagename'";
 
-	//this talks to the database and gets information for the image we are looking for
+	//we actually talk to the database - which database? - out $link database, and what do we say - we say the information in our $query variable - which says to get all the information for one specific role
 	$result = mysqli_query($link, $query);
 
-	//this creates an array of our table names and their corresponding information
+	//this creates an array of all that row information
 	$row = mysqli_fetch_array($result);
 
 	//if we cannot make a query to the database - we get an error
