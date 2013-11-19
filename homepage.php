@@ -8,11 +8,12 @@
 	}
 
 	//just like in our uploads file - we get ready to talk to the database. We don't actually talk to the datebase. we create a variable called $query that says we want to SELECT ALL the data from ALL the columns in our gallery
-	$query = 'SELECT ';
+	$query = 'SELECT *';
 	$query .= 'FROM gallery';
 
 	//here is where we actually talk to the database. say which database we want to talk to (our $link database) and we tell it what to say with our $query variable which says to SELECT ALL the data from ALL the columns in our gallery table
 	$result = mysqli_query($link, $query);
+
 
 	//if we aren't able to talk to the database the user gets an error and the php dies
 	if (!$result) {
@@ -42,6 +43,8 @@
 	<nav id="navigation">
 		<ul>
 			<li><a href="upload.php">Upload</a></li>
+			<li><a href="documentation.html">Documentation</a></li>
+			<li><a href="essay.html">Essay</a></li>
 		</ul>
 	</nav>
 	<h1>Check out this baller image gallery:</h1>

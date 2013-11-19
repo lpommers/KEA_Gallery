@@ -2,7 +2,7 @@
 	/**
 	 * [$link = a variable that connects to our database - if it does not there is an error and the whole page fails]
 	 */
-	$link=mysqli_connect('localhost', 'kriz0001','kea660587#', 'kriz0001')  or die("Error " . mysqli_error($link));
+	$link=mysqli_connect('localhost', 'kriz0001','kea660587#', 'kriz0001');
 
 	/**
 	 * this brings in our make_thumbs function that will be used to create our small thumbnail images

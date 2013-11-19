@@ -64,7 +64,7 @@ h2{
 }
 
 .red {color: #f10026;}
- 
+
 form{
 
 	font-size: 1.5em;
@@ -145,6 +145,40 @@ a > img:hover{
   width: 100% !important;
   height: auto !important;
   overflow: visible;
+}
+
+ol li{
+	width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: .2em;
+	padding-bottom:.2em;
+}
+
+ol {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+ul li{
+	width: 65%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: .2em;
+	padding-bottom:.2em;
+}
+
+ul {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.doc_p{
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .full_text{

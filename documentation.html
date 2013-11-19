@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gallery</title>
+	<link rel="stylesheet" href="style.css">
+	<link href='http://fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
+ </head>
+
+<body>
+	<header>
+		<img id ='logo' src="photogallery.png" alt="">
+	</header>
+  	<nav id="navigation">
+ 		<ul>
+			<li><a href="homepage.php">Gallery</a></li>
+			<li><a href="upload.php">Upload</a></li>
+		</ul>
+ 	</nav>
+
+	<h1>Image Gallery Documentation</h1>
+
+	<h2>Scripts and Files</h2>
+	<ol>
+		<li><strong>homepage.php </strong>– The gallery homepage. This is the landing page for the site. It grabs all column information for all rows in our database table. We loop through every item in the database and display the thumbnail image for each row. The thumbnails are clickable and link to the full image view page (fullimage.php). In this link to fullimage.php we include a piece of information containing the imagename using the GET method so the fullimage.php file knows which particular image to display. </li>
+		<li><strong>fullimage.php </strong>– This page displays the full size image and other related information. It connects to the database and finds the data related to the specific image the user clicked using GET data it was passed. It grabs the imagename, title, description, and location information for that one particular image and then displays it out to user along with the full size image.</li>
+		<li><strong>functions.php </strong>– this files contains a single function called make_thumb. This function takes the image that the user will upload and divides its width and height in halve and creates a new image that is half as large. This new images has a smaller file size. The image is saved in the thumb images folder on the server. These smaller images will be displayed on the homepage gallery.</li>
+		<li><strong>upload.php </strong>-  This is the page where the user can upload their image. It connects to the database and then grabs the function make_thumb from functions.php. We check the uploaded image for size, type, and if it already exists on the server. If any of those are wrong, the file does not get uploaded and no database information is created.  If it passes, we put the user input into the database, upload the file, and create a thumbnail version of the image. This page contains the form for uploading.</li>
+		<li><strong>style.css </strong>– A style sheet for the site.</li>
+	</ol>
+
+	<h2>Naming Convention</h2>
+	<p class='doc_p'>Our naming convention is a lowercase naming system with underscores acting as a space between words. </p>
+
+	<h2>Database and Table named 'Gallery' (in order)</h2>
+	<ul>
+		<li><strong>Id </strong>- an auto-incremented id that the database creates for each new entry</li>
+		<li><strong>Username </strong>- the name of person who uploaded the image</li>
+		<li><strong>Image name</strong> - name of the image file</li>
+		<li><strong>Title </strong>- the title of the image given by the user</li>
+		<li><strong>Description </strong>- a description of the image created by the user</li>
+		<li><strong>Date </strong>- the date the imagae has been uploaded</li>
+		<li><strong>Location </strong>- the location of the image</li>
+	</ul>
+
+	<h2>Known Issues</h2>
+	<p class='doc_p'>Known Issues: We have an issue where the temporary image that is being uploaded fails to receive a type. The image does not upload or go on to the server, but we do not know why some images fail to receive a type – even in their temporary state – before they have been moved onto the server. </p>
+</body>
+</html>
