@@ -11,6 +11,8 @@ body {
 	box-sizing: border-box;
 	color:#050505;
 }
+header {background-color: white;}
+
 #logo {width: 35%;}
 nav {
 	text-align: center;
